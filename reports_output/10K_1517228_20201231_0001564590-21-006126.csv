@@ -1,0 +1,5 @@
+score,metric,date,value,year,sentence,number
+0.8647143840789795,r&d value,2020,$703.3 million,2020,"we invested $703.3 million in research and development during 2020, and we expect to continue with substantial investments in future years",703300000.0
+0.6586567163467407,r&d value,2020,$703.3 million,2020,we invested $703.3 million in research and development during 2020 to advance product innovation and drive total cost of deployment and ownership down,703300000.0
+0.5725321769714355,r&d value,the past three years,$1.5 billion,2020,"our strong cash flow profile has allowed us to pay down $1.4 billion of debt over the past three years, while also investing $1.5 billion in research and development aimed at both driving profit expansion and revenue growth",1500000000.0
+0.4295530021190643,r&d value,2028,$105.8 million,2028,"the deferred tax asset for federal net operating loss and tax credit carryforwards as of december 31, 2020 relates to $7.5 million of net operating losses carryforwards, which begin to expire in 2028, $105.8 million of research and development credit carryforwards, which begin to expire in 2024 and $46.2 million of u.s",105800000.0
