@@ -1,0 +1,189 @@
+{
+    "Aquisition ": {
+        "CAC": [
+            "CAC Customer",
+            "Acquisition Cost",
+            "Customer Acquisition Cost",
+            "CAC"
+        ],
+        "Total Number of Customers": [
+            "Total Number of Customers",
+            "Number of Customers",
+            "Customers",
+            "Total Customers"
+        ],
+        "New Customers": [
+            "New Customers",
+            "Current Quarter New Customers"
+        ],
+        "Number of New Accounts": [
+            "Number of New Accounts",
+            "New Accounts",
+            "Number of Accounts"
+        ]
+    },
+    "Engagement and Retention": {
+        "DAU": [
+            "DAU",
+            "Daily Active Users",
+            "Active Users"
+        ],
+        "WAU": [
+            "WAU",
+            "Weekly Active Users"
+        ],
+        "MAU": [
+            "MAU",
+            "Monthly Active Users"
+        ],
+        "NPS": [
+            "NPS",
+            "Net Promoter Score"
+        ],
+        "Retention Rate": [
+            "Retention",
+            "Annual retention",
+            "Annual net dollar retention",
+            "Platform revenue retention",
+            "Dollar based Net Retention",
+            "Recurring revenue retention",
+            "Net subscription dollar retention",
+            "Organizational Dollar Based Net Retention",
+            "Individual Dollar-Based Net Retention",
+            "Subscription and support revenue retention rate including addons",
+            "client retention",
+            "Software services revenue retention",
+            "Customer Retention",
+            "Dollar based Gross Retention",
+            "Monthly billings retention",
+            "Net retention rate for subscription products"
+        ]
+    },
+    "Revenue and Growth": {
+        "ARR": [
+            "ARR ",
+            "Annual recurring revenue",
+            "recurring revenue",
+            "Net New ARR",
+            "New ARR",
+            "Dynatrace ARR",
+            "Churned ARR",
+            "subscription revenue"
+        ],
+        "Churn": [
+            "Churn",
+            "Implied Churn",
+            "Revenue churn rate",
+            "Total ARR Churn Rate",
+            "Churn Rate",
+            "Implied churn rate"
+        ],
+        "MRR": [
+            "MRR",
+            "Monthly Recurring revenue",
+            "New MRR",
+            "Churned MRR"
+        ],
+        "Marketable Securities": [
+            "marketable securities"
+        ],
+        "SR": [
+            "SR",
+            "Subscription Revenue",
+            "Quarterly Subscription Revenue",
+            "QSR"
+        ],
+        "Customer Revenue": [
+            "revenue customers"
+        ],
+        "CPaaS revenue": [
+            "CPaaS revenue",
+            "CPaas",
+            "Communications Platform as a Service"
+        ],
+        "Support revenue": [
+            "Support revenue",
+            "SR"
+        ],
+        "ARPA": [
+            "ARPA",
+            "Average Revenue",
+            "Per Acount"
+        ],
+        "ACV": [
+            "ACV",
+            "aggregate ACV",
+            "implied recurring ACV",
+            "implied ACV",
+            "Annual Contract Value",
+            "contract value",
+            "Sub  contract value",
+            "renewed contract value"
+        ],
+        "Sub Revenue": [
+            "Sub Revenue",
+            "SR"
+        ],
+        "SaaS & license revenue renewal rate": [
+            "SaaS & license revenue renewal rate",
+            "license revenue renewal rate"
+        ]
+    },
+    "Unit Economics": {
+        "LTV": [
+            "LTV",
+            "Lifetime Value"
+        ],
+        "CAC Payback": [
+            "CAC Payback",
+            "CAC",
+            "Payback"
+        ]
+    },
+    "Others": {
+        "Employee count": [
+            "EC",
+            "Employee Count",
+            "Number of employee"
+        ],
+        "Marketable Securities": [
+            "Marketable Securities",
+            "Securities"
+        ],
+        "NDR": [
+            "NDR",
+            "Net Disposable Revenue",
+            "Disposable revenue"
+        ],
+        "Debt to Equity": [
+            "Debt to Equity",
+            "Debt to Equity Ratio"
+        ],
+        "Cash on Balance Sheet": [
+            "total Cash",
+            "Cash on balance sheet"
+        ],
+        "R&D value": [
+            "RnD",
+            "R&D",
+            "Research and Development"
+        ],
+        "renewed sub fees": [
+            "renewed sub fees",
+            "sub fees",
+            "rsf"
+        ],
+        "expiring sub fees": [
+            "expiring sub fees",
+            "sub fees"
+        ],
+        "Annualized Billings": [
+            "Annualized Billings",
+            "Billings"
+        ],
+        "Contract renewal rate": [
+            "Contract renewal rate",
+            "CRR"
+        ]
+    }
+}
