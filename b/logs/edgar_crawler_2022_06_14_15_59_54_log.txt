@@ -1,0 +1,21 @@
+06-14-2022 21:29 - edgar_crawler - INFO - Saving log to /mnt/d/Projects/DigitalAlpha/Metric_Extraction/sec-scrapper/logs
+
+06-14-2022 21:29 - edgar_crawler - INFO - Downloading EDGAR Index files
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2020_QTR1.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2020_QTR2.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2020_QTR3.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2020_QTR4.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2021_QTR1.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2021_QTR2.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2021_QTR3.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2021_QTR4.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2022_QTR1.tsv
+06-14-2022 21:29 - edgar_crawler - INFO - Skipping 2022_QTR2.tsv
+06-14-2022 21:30 - edgar_crawler - INFO - 
+Reading filings metadata...
+
+06-14-2022 21:30 - edgar_crawler - INFO - 
+Downloading 3 filings...
+
+06-14-2022 21:30 - edgar_crawler - INFO - 
+Final dataframe exported to /mnt/d/Projects/DigitalAlpha/Metric_Extraction/sec-scrapper/datasets/FILINGS_METADATA.csv
