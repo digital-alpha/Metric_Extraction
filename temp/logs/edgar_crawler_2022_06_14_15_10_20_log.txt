@@ -1,2 +1,0 @@
-06-14-2022 20:40 - edgar_crawler - INFO - Saving log to /mnt/d/Projects/DigitalAlpha/Metric_Extraction/sec-scrapper/logs
-
