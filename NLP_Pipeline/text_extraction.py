@@ -3,16 +3,19 @@
 Text extraction module inherits utilities from the entity recognition module and is used to extract the metrics from the document.
 """
 import re
+from utils import *
 from question_answering import QuestionAnsweringModule
 from entity_recognition import EntityRecognitionModule
 from sentence_transformers import SentenceTransformer, util
 
+
 class TextExtractionModule(QuestionAnsweringModule):
     def __init__(self, nerModel, qaModel):
         super(TextExtractionModule, self).__init__(qaModel=qaModel, nerModel=nerModel)
+        metricList = read_flatten_metrics()
+        sim_model = SentenceTransformer('bert-base-nli-mean-tokens')
 
     def __call__(self, sent, filing_year):
-        sim_model = SentenceTransformer('bert-base-nli-mean-tokens')
         # TODO:
         # 1. Call the model for entity recognition
         # 2. Create question and context
@@ -82,8 +85,8 @@ class TextExtractionModule(QuestionAnsweringModule):
 
             gsim, year = -1, filing_year
             for ysent, shift in year_match:
-                enc1 = sim_model.encode(ysent)
-                enc2 = sim_model.encode(date)
+                enc1 = self.sim_model.encode(ysent)
+                enc2 = self.sim_model.encode(date)
                 sim = util.cos_sim(enc1, enc2)[0][0]
 
                 if gsim < sim:
@@ -92,8 +95,8 @@ class TextExtractionModule(QuestionAnsweringModule):
 
             return year
 
-        for unit in metricList:
-            for alt in metricList[unit]:
+        for unit in self.metricList:
+            for alt in self.metricList[unit]:
                 if not is_subseq(alt, sent):
                     continue
                 all_metrics.append((alt, unit))

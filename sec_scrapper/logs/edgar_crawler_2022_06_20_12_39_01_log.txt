@@ -1,0 +1,14 @@
+06-20-2022 18:09 - edgar_crawler - INFO - Saving log to /mnt/d/Projects/DigitalAlpha/Metric_Extraction/sec_scrapper/logs
+
+06-20-2022 18:09 - edgar_crawler - INFO - Downloading EDGAR Index files
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2020_QTR1.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2020_QTR2.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2020_QTR3.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2020_QTR4.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2021_QTR1.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2021_QTR2.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2021_QTR3.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2021_QTR4.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2022_QTR1.tsv
+06-20-2022 18:09 - edgar_crawler - INFO - Skipping 2022_QTR2.tsv
+06-20-2022 18:10 - edgar_crawler - INFO - Failed downloading "https://www.sec.gov/files/company_tickers.json" - HTTPSConnectionPool(host='www.sec.gov', port=443): Max retries exceeded with url: /files/company_tickers.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3d10b15b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
