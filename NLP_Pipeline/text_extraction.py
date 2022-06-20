@@ -7,13 +7,12 @@ from utils import *
 from question_answering import QuestionAnsweringModule
 from entity_recognition import EntityRecognitionModule
 from sentence_transformers import SentenceTransformer, util
-
+metricList = read_flatten_metrics()
+sim_model = SentenceTransformer('bert-base-nli-mean-tokens')
 
 class TextExtractionModule(QuestionAnsweringModule):
     def __init__(self, nerModel, qaModel):
         super(TextExtractionModule, self).__init__(qaModel=qaModel, nerModel=nerModel)
-        metricList = read_flatten_metrics()
-        sim_model = SentenceTransformer('bert-base-nli-mean-tokens')
 
     def __call__(self, sent, filing_year):
         # TODO:
@@ -95,8 +94,8 @@ class TextExtractionModule(QuestionAnsweringModule):
 
             return year
 
-        for unit in self.metricList:
-            for alt in self.metricList[unit]:
+        for unit in metricList:
+            for alt in metricList[unit]:
                 if not is_subseq(alt, sent):
                     continue
                 all_metrics.append((alt, unit))

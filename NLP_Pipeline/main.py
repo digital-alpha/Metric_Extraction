@@ -10,8 +10,8 @@ Original file is located at
   * sentnecepiece (for testing slow tokenizers)
 """
 
-FILINGS_PATH = "../sec-scrapper/datasets/10_K"
-OUTPUT_PATH = "../reports_output"
+INPUT_FILINGS_PATH = "../sec-scrapper/datasets/10_K"
+OUTPUT_FILINGS_PATH = "../reports_output"
 
 """# Pre trained load models
 * Two main models required in the application
@@ -39,14 +39,106 @@ from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 tokenizer = AutoTokenizer.from_pretrained("deepset/roberta-base-squad2")
 model = AutoModelForQuestionAnswering.from_pretrained("deepset/roberta-base-squad2")
 
-
 #load assests
 try:
-    nlp = spacy.load('en_core_web_lg')
+    spacy_nlp_model = spacy.load('en_core_web_lg')
 except:
     print("ERROR LOADING SPACY en_core_web_lg")
     spacy.download('en_core_web_lg')
-    nlp = spacy.load('en_core_web_lg')
+    spacy_nlp_model = spacy.load('en_core_web_lg')
+
+"""Create the question answering pipeline using hugging face transformers"""
+
+question_answerer = pipeline("question-answering", model=model, tokenizer=tokenizer)
+
+"""Create the named entity recognition model using the spacy library"""
+
+"""Create the pargraph extractor and then test it on sample sentence"""
+
+paragraph_extractor = ParagraphExtractionModule(nerModel=spacy_nlp_model, qaModel=question_answerer)
+sent = 'Creative ARR for last year was $3.2 billion and increased upto $8.78 billion this year.'
+paragraph_extractor(sent.lower(), 2020)
+
+"""# JSON testing"""
+
+#TODO: Handle Directory if already exists or not exists
+"""Get the json filings from FILING_PATH"""
+
+def run_extractor(INPUT_FILINGS_PATH, OUTPUT_FILINGS_PATH, paragraph_extractor):
+    dir, _, files = next(os.walk(INPUT_FILINGS_PATH))
+    """Run the Paragraph Extraction Model on all the filings in the FILING_PATH"""
+    for file in tqdm(files):
+        fp = open(f'{dir}/{file}', 'r')
+        filing = json.load(fp)
+        res = []
+        para = ""
+        for item in filing:
+            para += str(filing[item])
+        res = paragraph_extractor(para, int(filing['filing_date'].split('-')[0]))
+        data = {
+            'score'    : [r['score'] for r in res],
+            'metric'   : [r['metric'] for r in res],
+            'date'     : [r['date'] for r in res],
+            'value'    : [r['value'] for r in res],
+            'year'     : [r['year'] for r in res],
+            'sentence' : [r['sentence'] for r in res],
+        }
+        pd.DataFrame(data).to_csv(f'{OUTPUT_FILINGS_PATH}/{file.strip(".json")}.csv', index = False)
+
+run_extractor(INPUT_FILINGS_PATH, OUTPUT_FILINGS_PATH, paragraph_extractor)
+
+"""
+Convert values containing words to numbers
+Example two hundred thirty -> 230
+"""
+def words_to_numbers(INPUT_FILINGS_PATH, OUTPUT_FILINGS_PATH):
+    dir, _, files = next(os.walk(OUTPUT_FILINGS_PATH))
+    for file in tqdm(files):
+        if file.endswith('.gsheet'):
+           continue
+        df = pd.read_csv(f'{dir}/{file}')
+        vals = []
+        for i in df.index:
+            val = df['value'][i]
+            val = re.sub(r',', '', str(val))
+
+            # fractions in words like half and one quater is hardcoded
+            if val == 'less than half' or val == 'greater than half' or val == 'just over half':
+                num = 0.5
+            elif val == 'thousands':
+                num = 1000.
+            elif val == 'millions':
+                num = 1e6
+            else:
+                # Extract the integer value if it is there in the value
+                try:
+                    num = float(re.findall(r'[0-9\.]+', val)[0])
+                except:
+                    # convert word like "two" to number 2
+                    num = float(w2n.word_to_num(val))
+
+                # multiply the factors
+                if 'billion' in val:
+                    num *= 1e9
+                elif 'million' in val:
+                    num *= 1e6
+            vals.append(num)
+
+        df['number'] = vals
+        df.to_csv(f'{dir}/{file}', index=False)
+
+words_to_numbers(INPUT_FILINGS_PATH, OUTPUT_FILINGS_PATH)
+
+
+
+
+
+
+
+
+
+
+
 
 # Utility Functions
 # metricList = read_flatten_metrics()
@@ -265,11 +357,7 @@ except:
 #         # final = metrics
 #         return metrics
 
-"""Create the question answering pipeline using hugging face transformers"""
 
-QuestionAnswerer = pipeline("question-answering", model=model, tokenizer=tokenizer)
-
-"""Create the named entity recognition model using the spacy library"""
 
 # this cell may take upto 5 minutes to load the model
 
@@ -278,85 +366,11 @@ QuestionAnswerer = pipeline("question-answering", model=model, tokenizer=tokeniz
 #spacy.cli.download("en_core_web_lg")
 
 
-"""Create the pargraph extractor and then test it on sample sentence"""
 
-pe = ParagraphExtractionModule(nerModel=nlp, qaModel=QuestionAnswerer)
-sent = 'Creative ARR for last year was $3.2 billion and increased upto $8.78 billion this year.'
-pe(sent.lower(), 2020)
 
-"""# JSON testing"""
-
-# FILINGS_PATH = 'path/to/filings-10K' # Path to the filings
-# OUTPUT_PATH = 'path/to/output'       # Path to the output
+# INPUT_FILINGS_PATH = 'path/to/filings-10K' # Path to the filings
+# OUTPUT_FILINGS_PATH = 'path/to/output'       # Path to the output
 
 # EXAMPLE
 
 
-#TODO: Handle Directory if already exists or not exists
-"""Get the json filings from FILING_PATH"""
-
-dir, _, files = next(os.walk(FILINGS_PATH))
-
-"""Run the Paragraph Extraction Model on all the filings in the FILING_PATH"""
-for file in tqdm(files):
-    fp = open(f'{dir}/{file}', 'r')
-    filing = json.load(fp)
-
-    res = []
-
-    para = ""
-    for item in filing:
-        para += str(filing[item])
-
-    res = pe(para, int(filing['filing_date'].split('-')[0]))
-
-    data = {
-        'score'    : [r['score'] for r in res],
-        'metric'   : [r['metric'] for r in res],
-        'date'     : [r['date'] for r in res],
-        'value'    : [r['value'] for r in res],
-        'year'     : [r['year'] for r in res],
-        'sentence' : [r['sentence'] for r in res],
-    }
-
-    pd.DataFrame(data).to_csv(f'{OUTPUT_PATH}/{file.strip(".json")}.csv', index = False)
-
-"""## Convert values containing words to numbers
-
-Example two hundred thirty -> 230
-"""
-
-dir, _, files = next(os.walk(OUTPUT_PATH))
-for file in tqdm(files):
-    if file.endswith('.gsheet'):
-       continue
-    df = pd.read_csv(f'{dir}/{file}')
-    vals = []
-    for i in df.index:
-        val = df['value'][i]
-        val = re.sub(r',', '', str(val))
-
-        # fractions in words like half and one quater is hardcoded
-        if val == 'less than half' or val == 'greater than half' or val == 'just over half':
-            num = 0.5
-        elif val == 'thousands':
-            num = 1000.
-        elif val == 'millions':
-            num = 1e6
-        else:
-            # Extract the integer value if it is there in the value
-            try:
-                num = float(re.findall(r'[0-9\.]+', val)[0])
-            except:
-                # convert word like "two" to number 2
-                num = float(w2n.word_to_num(val))
-
-            # multiply the factors
-            if 'billion' in val:
-                num *= 1e9
-            elif 'million' in val:
-                num *= 1e6
-        vals.append(num)
-
-    df['number'] = vals
-    df.to_csv(f'{dir}/{file}', index=False)

@@ -2,6 +2,8 @@
 import re
 import os
 import json
+import pandas as pd
+from tqdm.notebook import tqdm
 
 """### Flatten the metrics list for easy matching"""
 def read_flatten_metrics(path='./metrics.json'):
@@ -27,3 +29,67 @@ def is_subseq(s1, s2):
             p1+=1
         p2 += 1
     return p1 == len(s1)    
+
+#TODO: Handle Directory if already exists or not exists
+"""Get the json filings from FILING_PATH"""
+
+def run_extractor(INPUT_FILINGS_PATH, OUTPUT_FILINGS_PATH, paragraph_extractor):
+    dir, _, files = next(os.walk(INPUT_FILINGS_PATH))
+    """Run the Paragraph Extraction Model on all the filings in the FILING_PATH"""
+    for file in tqdm(files):
+        fp = open(f'{dir}/{file}', 'r')
+        filing = json.load(fp)
+        res = []
+        para = ""
+        for item in filing:
+            para += str(filing[item])
+        res = paragraph_extractor(para, int(filing['filing_date'].split('-')[0]))
+        data = {
+            'score'    : [r['score'] for r in res],
+            'metric'   : [r['metric'] for r in res],
+            'date'     : [r['date'] for r in res],
+            'value'    : [r['value'] for r in res],
+            'year'     : [r['year'] for r in res],
+            'sentence' : [r['sentence'] for r in res],
+        }
+        pd.DataFrame(data).to_csv(f'{OUTPUT_FILINGS_PATH}/{file.strip(".json")}.csv', index = False)
+
+"""
+Convert values containing words to numbers
+Example two hundred thirty -> 230
+"""
+def words_to_numbers(INPUT_FILINGS_PATH, OUTPUT_FILINGS_PATH):
+    dir, _, files = next(os.walk(OUTPUT_FILINGS_PATH))
+    for file in tqdm(files):
+        if file.endswith('.gsheet'):
+           continue
+        df = pd.read_csv(f'{dir}/{file}')
+        vals = []
+        for i in df.index:
+            val = df['value'][i]
+            val = re.sub(r',', '', str(val))
+
+            # fractions in words like half and one quater is hardcoded
+            if val == 'less than half' or val == 'greater than half' or val == 'just over half':
+                num = 0.5
+            elif val == 'thousands':
+                num = 1000.
+            elif val == 'millions':
+                num = 1e6
+            else:
+                # Extract the integer value if it is there in the value
+                try:
+                    num = float(re.findall(r'[0-9\.]+', val)[0])
+                except:
+                    # convert word like "two" to number 2
+                    num = float(w2n.word_to_num(val))
+
+                # multiply the factors
+                if 'billion' in val:
+                    num *= 1e9
+                elif 'million' in val:
+                    num *= 1e6
+            vals.append(num)
+
+        df['number'] = vals
+        df.to_csv(f'{dir}/{file}', index=False)
