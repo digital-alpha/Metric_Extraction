@@ -7,7 +7,7 @@ import os
 import pandas as pd
 import re
 import sys
-
+import file_constants
 from bs4 import BeautifulSoup
 from html.parser import HTMLParser
 from pathos.multiprocessing import ProcessPool
@@ -65,9 +65,7 @@ class ExtractItems:
     ):
 
         self.remove_tables = remove_tables
-        self.items_list = [
-            '1.01','1.02','1.03','2.01','2.02','2.03','2.04','2.05','2.06','3.01','3.02','3.03','4.01','4.02','5.01','5.02','5.03','5.05','5.07','7.01','8.01','9.01'
-        ]
+        self.items_list = file_constants.ITEM_LIST_8_K
         self.items_to_extract = items_to_extract if items_to_extract else self.items_list
         self.raw_files_folder = raw_files_folder
         self.extracted_files_folder = extracted_files_folder
