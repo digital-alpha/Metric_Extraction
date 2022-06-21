@@ -1,9 +1,226 @@
 {
+    "1018724": {
+        "Company Name": "AMAZON COM INC",
+        "SIC": "5961",
+        "State location": "WA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1043604": {
+        "Company Name": "JUNIPER NETWORKS INC",
+        "SIC": "3576",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1065280": {
+        "Company Name": "NETFLIX INC",
+        "SIC": "7841",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1091667": {
+        "Company Name": "CHARTER COMMUNICATIONS, INC. /MO/",
+        "SIC": "4841",
+        "State location": "CT",
+        "State of Inc": null,
+        "Fiscal Year End": "1231"
+    },
+    "1101239": {
+        "Company Name": "EQUINIX INC",
+        "SIC": "6798",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1138639": {
+        "Company Name": "Infinera Corp",
+        "SIC": "3661",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1158114": {
+        "Company Name": "APPLIED OPTOELECTRONICS, INC.",
+        "SIC": "3674",
+        "State location": "TX",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1166691": {
+        "Company Name": "COMCAST CORP",
+        "SIC": "4841",
+        "State location": "PA",
+        "State of Inc": "PA",
+        "Fiscal Year End": "1231"
+    },
+    "1227025": {
+        "Company Name": "NEOPHOTONICS CORP",
+        "SIC": "3674",
+        "State location": "CA",
+        "State of Inc": null,
+        "Fiscal Year End": "1231"
+    },
+    "1326801": {
+        "Company Name": "Meta Platforms, Inc.",
+        "SIC": "7370",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1333835": {
+        "Company Name": "Casa Systems Inc",
+        "SIC": "3663",
+        "State location": "MA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1406666": {
+        "Company Name": "CALIX, INC",
+        "SIC": "4899",
+        "State location": "CA",
+        "State of Inc": null,
+        "Fiscal Year End": "1231"
+    },
+    "1477333": {
+        "Company Name": "Cloudflare, Inc.",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
     "1517228": {
         "Company Name": "CommScope Holding Company, Inc.",
         "SIC": "3663",
         "State location": "NC",
         "State of Inc": "DE",
         "Fiscal Year End": "1231"
+    },
+    "1585521": {
+        "Company Name": "Zoom Video Communications, Inc.",
+        "SIC": "7370",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0131"
+    },
+    "1596532": {
+        "Company Name": "Arista Networks, Inc.",
+        "SIC": "3576",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1620280": {
+        "Company Name": "Uniti Group Inc.",
+        "SIC": "6798",
+        "State location": "AR",
+        "State of Inc": "MD",
+        "Fiscal Year End": "1231"
+    },
+    "1652044": {
+        "Company Name": "Alphabet Inc.",
+        "SIC": "7370",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1708055": {
+        "Company Name": "Ribbon Communications Inc.",
+        "SIC": "7373",
+        "State location": "TX",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "24741": {
+        "Company Name": "CORNING INC /NY",
+        "SIC": "3357",
+        "State location": "NY",
+        "State of Inc": "NY",
+        "Fiscal Year End": "1231"
+    },
+    "732712": {
+        "Company Name": "VERIZON COMMUNICATIONS INC",
+        "SIC": "4813",
+        "State location": "NY",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "732717": {
+        "Company Name": "AT&T INC.",
+        "SIC": "4813",
+        "State location": "TX",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "851310": {
+        "Company Name": "HARMONIC INC",
+        "SIC": "3663",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1078271": {
+        "Company Name": "EXTREME NETWORKS INC",
+        "SIC": "3576",
+        "State location": "NC",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0630"
+    },
+    "1633978": {
+        "Company Name": "Lumentum Holdings Inc.",
+        "SIC": "3669",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0702"
+    },
+    "789019": {
+        "Company Name": "MICROSOFT CORP",
+        "SIC": "7372",
+        "State location": "WA",
+        "State of Inc": "WA",
+        "Fiscal Year End": "0630"
+    },
+    "820318": {
+        "Company Name": "II-VI INC",
+        "SIC": "3827",
+        "State location": "PA",
+        "State of Inc": "PA",
+        "Fiscal Year End": "0630"
+    },
+    "858877": {
+        "Company Name": "CISCO SYSTEMS, INC.",
+        "SIC": "3576",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0730"
+    },
+    "1048695": {
+        "Company Name": "F5, INC.",
+        "SIC": "3576",
+        "State location": "WA",
+        "State of Inc": "WA",
+        "Fiscal Year End": "0930"
+    },
+    "320193": {
+        "Company Name": "Apple Inc.",
+        "SIC": "3571",
+        "State location": "CA",
+        "State of Inc": "CA",
+        "Fiscal Year End": "0924"
+    },
+    "936395": {
+        "Company Name": "CIENA CORP",
+        "SIC": "3661",
+        "State location": "MD",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1029"
+    },
+    "1583708": {
+        "Company Name": "SentinelOne, Inc.",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0131"
     }
 }
