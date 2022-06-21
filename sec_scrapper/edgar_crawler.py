@@ -9,7 +9,7 @@ import tempfile
 import zipfile
 import csv
 import logging
-
+import file_constants
 from bs4 import BeautifulSoup
 from datetime import datetime
 from logger import Logger
@@ -36,11 +36,16 @@ LOGGER.info(f'Saving log to {os.path.join(LOGGING_DIR)}\n')
 
 
 def main():
-	"""
-	The main method iterates all over the tsv index files that are generated
-	and calls a crawler method for each one of them.
-	"""
+	tsv_parser()
 
+	
+	
+
+"""
+	This method iterates all over the tsv index files that are generated
+	and calls a crawler method for each one of them.
+"""
+def tsv_parser():
 	with open('config.json') as fin:
 		config = json.load(fin)['edgar_crawler']
 
@@ -61,7 +66,6 @@ def main():
 	if not os.path.isfile(os.path.join(DATASET_DIR, 'companies_info.json')):
 		with open(os.path.join(DATASET_DIR, 'companies_info.json'), 'w') as f:
 			json.dump(obj={}, fp=f)
-
 	download_indices(
 		start_year=config['start_year'],
 		end_year=config['end_year'],
@@ -70,8 +74,6 @@ def main():
 		indices_folder=indices_folder,
 		user_agent=config['user_agent']
 	)
-
-	# Filter out years that are not related
 	tsv_filenames = []
 	for year in range(config['start_year'], config['end_year'] + 1):
 		for quarter in config['quarters']:
@@ -79,13 +81,7 @@ def main():
 
 			if os.path.isfile(filepath):
 				tsv_filenames.append(filepath)
-	# sad
-	# file = open('CIK.csv')
-	# print(file)
-	# csvreader = csv.reader(file)
-	# for row in csvreader:
-	# 	cik_tickers=row
-		
+
 		# Get the indices that are specific to your needs
 	df = get_specific_indices(
 		tsv_filenames=tsv_filenames,
@@ -148,7 +144,7 @@ def download_indices(
 		indices_folder: str,
 		user_agent: str
 ):
-	base_url = "https://www.sec.gov/Archives/edgar/full-index/"
+	base_url = file_constants.BASE_URL
 
 	LOGGER.info('Downloading EDGAR Index files')
 
@@ -230,7 +226,7 @@ def get_specific_indices(
 				exit()
 
 	if isinstance(cik_tickers, List) and len(cik_tickers):
-		company_tickers_url = 'https://www.sec.gov/files/company_tickers.json'
+		company_tickers_url = file_constants.COMPANY_TICKER_URL
 
 		session = requests.Session()
 		try:
@@ -264,15 +260,11 @@ def get_specific_indices(
 			sep='|',
 			header=None,
 			dtype=str,
-			names=[
-				'CIK', 'Company', 'Type', 'Date', 'complete_text_file_link', 'html_index',
-				'Filing Date', 'Period of Report', 'SIC', 'htm_file_link',
-				'State of Inc', 'State location', 'Fiscal Year End', 'filename'
-			]
+			names=file_constants.TSV_FILE_HEADERS
 		)
 
-		df['complete_text_file_link'] = 'https://www.sec.gov/Archives/' + df['complete_text_file_link'].astype(str)
-		df['html_index'] = 'https://www.sec.gov/Archives/' + df['html_index'].astype(str)
+		df['complete_text_file_link'] = file_constants.ARCHIVES + df['complete_text_file_link'].astype(str)
+		df['html_index'] = file_constants.ARCHIVES + df['html_index'].astype(str)
 
 		# Filter by filing type
 		df = df[df.Type.isin(filing_types)]
@@ -373,14 +365,13 @@ def crawl(
 	except (HTMLParseError, Exception) as e:
 		pass
 
-	# https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001000228
-	# https://data.sec.gov/submissions/CIK0001000228.json
+
 	with open(os.path.join(DATASET_DIR, 'companies_info.json')) as f:
 		company_info_dict = json.load(fp=f)
 
 	cik = series['CIK']
 	if cik not in company_info_dict:
-		company_url = f"https://www.sec.gov/cgi-bin/browse-edgar?CIK={cik}"
+		company_url = f"{file_constants.COMPANY_SEARCH_BASE}?CIK={cik}"
 		try:
 			retries_exceeded = True
 			for _ in range(5):
@@ -460,14 +451,14 @@ def crawl(
 				if tr.contents[7].text in filing_types:
 					filing_type = tr.contents[7].text
 					if tr.contents[5].contents[0].attrs['href'].split('.')[-1] in ['htm', 'html']:
-						htm_file_link = 'https://www.sec.gov' + tr.contents[5].contents[0].attrs['href']
+						htm_file_link = file_constants.HTML_BASE + tr.contents[5].contents[0].attrs['href']
 						series['htm_file_link'] = str(htm_file_link)
 						break
 
 				# Else get the complete submission text file
 				elif tr.contents[3].text == 'Complete submission text file':
 					filing_type = series['Type']
-					complete_text_file_link = 'https://www.sec.gov' + tr.contents[5].contents[0].attrs['href']
+					complete_text_file_link = file_constants.HTML_BASE + tr.contents[5].contents[0].attrs['href']
 					series['complete_text_file_link'] = str(complete_text_file_link)
 					break
 
@@ -567,7 +558,7 @@ def download(
 def requests_retry_session(
 		retries=5,
 		backoff_factor=0.5,
-		status_forcelist=(400, 401, 403, 500, 502, 503, 504, 505),
+		status_forcelist=file_constants.ERROR_TYPES,
 		session=None
 ):
 	"""

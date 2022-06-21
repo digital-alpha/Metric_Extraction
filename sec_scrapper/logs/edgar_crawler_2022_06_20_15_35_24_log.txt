@@ -1,0 +1,2 @@
+06-20-2022 21:05 - edgar_crawler - INFO - Saving log to /home/ananya/Documents/digitalalpha/Metric_Extraction/sec_scrapper/logs
+
