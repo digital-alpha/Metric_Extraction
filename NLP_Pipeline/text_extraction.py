@@ -1,7 +1,3 @@
-"""# Text Extraction Module
-
-Text extraction module inherits utilities from the entity recognition module and is used to extract the metrics from the document.
-"""
 import re
 from utils import *
 from question_answering import QuestionAnsweringModule
@@ -84,8 +80,8 @@ class TextExtractionModule(QuestionAnsweringModule):
 
             gsim, year = -1, filing_year
             for ysent, shift in year_match:
-                enc1 = self.sim_model.encode(ysent)
-                enc2 = self.sim_model.encode(date)
+                enc1 = sim_model.encode(ysent)
+                enc2 = sim_model.encode(date)
                 sim = util.cos_sim(enc1, enc2)[0][0]
 
                 if gsim < sim:

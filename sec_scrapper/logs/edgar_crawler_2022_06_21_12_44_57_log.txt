@@ -1,0 +1,18 @@
+06-21-2022 18:14 - edgar_crawler - INFO - Saving log to /mnt/d/Projects/DigitalAlpha/Metric_Extraction/sec_scrapper/logs
+
+06-21-2022 18:14 - edgar_crawler - INFO - Downloading EDGAR Index files
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2020_QTR1.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2020_QTR2.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2020_QTR3.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2020_QTR4.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2021_QTR1.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2021_QTR2.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2021_QTR3.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2021_QTR4.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2022_QTR1.tsv
+06-21-2022 18:14 - edgar_crawler - INFO - Skipping 2022_QTR2.tsv
+06-21-2022 18:16 - edgar_crawler - INFO - 
+Reading filings metadata...
+
+06-21-2022 18:16 - edgar_crawler - INFO - 
+There are no more filings to download for the given years, quarters and companies

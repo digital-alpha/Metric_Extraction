@@ -1,8 +1,9 @@
-"""# Entity Recognition Module
-Thye Class of entity recognition module which will be used in the named entity recognition task.
-It expects a pretrained 
-"""
 class EntityRecognitionModule:
+    """
+        Entity Recognition Module
+        Thy Class of entity recognition module which will be used in the named entity recognition task.
+        It expects a pretrained 
+    """    
     def __init__(self, nerModel):
         self.nerModel = nerModel
         self.create_pipeline()
@@ -41,6 +42,8 @@ class EntityRecognitionModule:
 
 
     def create_pipeline(self):
-        # TODO: If the model doesnt have inbuilt pipeline like spacy,  create one
-        # Currently we use a model with inbuilt pipeline.
+        """
+            If the model doesnt have inbuilt pipeline like spacy,  create one
+            Currently we use a model with inbuilt pipeline.
+        """        
         pass

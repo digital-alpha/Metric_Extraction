@@ -1,10 +1,12 @@
-"""# Question Answering Module
-
-Question answering module inherits utilities from the entity recognition module and is used to answer the questions.
-"""
-
 from entity_recognition import EntityRecognitionModule
 class QuestionAnsweringModule(EntityRecognitionModule):
+    """
+        Question Answering Module
+        Question answering module inherits utilities from the entity recognition module and is used to answer the questions.
+
+    Args:
+        EntityRecognitionModule (EntityRecognitionModule): EntityRecognitionModule Class Inherited.
+    """
     def __init__(self, nerModel, qaModel):
         super(QuestionAnsweringModule, self).__init__(nerModel=nerModel)
         self.qaModel = qaModel

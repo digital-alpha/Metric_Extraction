@@ -2,17 +2,18 @@ import re
 from utils import *
 from text_extraction import TextExtractionModule
 
-"""# Paragraph Extraction Module
-
-Paragraph extraction module inherits utilities from the text extraction module and is used to extract the paragraphs from the document.
-"""
 class ParagraphExtractionModule(TextExtractionModule):
+    """
+        Paragraph Extraction Module
+        Paragraph extraction module inherits utilities from the text extraction module and is used to extract the paragraphs from the document.
+
+    Args:
+        TextExtractionModule (TextExtractionModule): TextExtractionModule Class Inherited.
+    """    
     def __init__(self, nerModel, qaModel):
         super(ParagraphExtractionModule, self).__init__(nerModel=nerModel, qaModel=qaModel)
 
     def __call__(self, para, filing_year):
-
-        # Logic to handle paragraph
         sents = re.split(r'\. |\n', para)
 
         metrics = []
