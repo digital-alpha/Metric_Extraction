@@ -222,5 +222,54 @@
         "State location": "CA",
         "State of Inc": "DE",
         "Fiscal Year End": "0131"
+    },
+    "1108524": {
+        "Company Name": "Salesforce, Inc.",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0131"
+    },
+    "1441816": {
+        "Company Name": "MongoDB, Inc.",
+        "SIC": "7372",
+        "State location": "NY",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0131"
+    },
+    "1459417": {
+        "Company Name": "2U, Inc.",
+        "SIC": "7372",
+        "State location": "MD",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1467623": {
+        "Company Name": "DROPBOX, INC.",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "796343": {
+        "Company Name": "ADOBE INC.",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1202"
+    },
+    "1341439": {
+        "Company Name": "ORACLE CORP",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": null,
+        "Fiscal Year End": "0531"
+    },
+    "823546": {
+        "Company Name": "ROCKETFUEL BLOCKCHAIN, INC.",
+        "SIC": "7372",
+        "State location": "NV",
+        "State of Inc": "NV",
+        "Fiscal Year End": "0331"
     }
 }

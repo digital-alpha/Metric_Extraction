@@ -1,0 +1,3 @@
+score,metric,date,value,year,sentence,number
+0.7748314142227173,r&d value,"the fiscal year ended march 31, 2021","163,405",2021,"research and development expenses for the fiscal year ended march 31, 2021 were $163,405 as compared to $3,390 for the comparable prior year period, an increase of $160,015",163405.0
+0.1100916489958763,total number of customers,april 2016,10,2016,"in april 2016, the fasb issued “asu 2016 - 10 revenue from contract with customers (topic 606): identifying performance obligations and licensing.” the amendments in this update do not change the core principle of the guidance in topic 606",10.0
