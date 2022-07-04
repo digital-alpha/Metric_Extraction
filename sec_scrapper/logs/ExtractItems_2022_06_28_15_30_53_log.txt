@@ -1,0 +1,6 @@
+06-28-2022 21:00 - ExtractItems - INFO - Starting extraction...
+
+06-28-2022 21:01 - ExtractItems - INFO - 
+Item extraction is completed successfully.
+06-28-2022 21:01 - ExtractItems - INFO - 14 new filings were processed.
+06-28-2022 21:01 - ExtractItems - INFO - Extracted filings are saved to: /mnt/d/Projects/DigitalAlpha/Metric_Extraction/sec_scrapper/datasets/10_K

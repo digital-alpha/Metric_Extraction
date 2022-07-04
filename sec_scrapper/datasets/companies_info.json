@@ -271,5 +271,96 @@
         "State location": "NV",
         "State of Inc": "NV",
         "Fiscal Year End": "0331"
+    },
+    "1342936": {
+        "Company Name": "Advanced Voice Recognition Systems, Inc",
+        "SIC": "1311",
+        "State location": "AZ",
+        "State of Inc": "NV",
+        "Fiscal Year End": "1231"
+    },
+    "1459200": {
+        "Company Name": "Alarm.com Holdings, Inc.",
+        "SIC": "7372",
+        "State location": "VA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1580808": {
+        "Company Name": "A10 Networks, Inc.",
+        "SIC": "3576",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "935036": {
+        "Company Name": "ACI WORLDWIDE, INC.",
+        "SIC": "7372",
+        "State location": "FL",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1023731": {
+        "Company Name": "8X8 INC /DE/",
+        "SIC": "7374",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0331"
+    },
+    "78749": {
+        "Company Name": "AGILYSYS INC",
+        "SIC": "7373",
+        "State location": "GA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0331"
+    },
+    "1013462": {
+        "Company Name": "ANSYS INC",
+        "SIC": "7372",
+        "State location": "PA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1433195": {
+        "Company Name": "APPFOLIO INC",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": null,
+        "Fiscal Year End": "1231"
+    },
+    "1441683": {
+        "Company Name": "APPIAN CORP",
+        "SIC": "7372",
+        "State location": "VA",
+        "State of Inc": null,
+        "Fiscal Year End": "1231"
+    },
+    "1477720": {
+        "Company Name": "Asana, Inc.",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0131"
+    },
+    "1540755": {
+        "Company Name": "Anaplan, Inc.",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "0131"
+    },
+    "1689923": {
+        "Company Name": "Alteryx, Inc.",
+        "SIC": "7372",
+        "State location": "CA",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
+    },
+    "1701732": {
+        "Company Name": "Altair Engineering Inc.",
+        "SIC": "7372",
+        "State location": "MI",
+        "State of Inc": "DE",
+        "Fiscal Year End": "1231"
     }
 }

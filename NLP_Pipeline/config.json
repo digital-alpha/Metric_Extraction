@@ -65,12 +65,17 @@
 				"Churn Rate",
 				"Implied churn rate"
 			],
+			"Gross Profit Margin": [
+				"gross profit margin",
+				"gross margin profit"
+			],
 			"MRR": [
 				"MRR",
 				"Monthly Recurring revenue",
 				"New MRR",
 				"Churned MRR"
 			],
+			"Market Capitalization": ["market capitalization"],
 			"Marketable Securities": ["marketable securities"],
 			"SR": [
 				"SR",
@@ -100,23 +105,36 @@
 			"SaaS & license revenue renewal rate": [
 				"SaaS & license revenue renewal rate",
 				"license revenue renewal rate"
-			]
+			],
+			"Quick Ratio": ["quick ratio"]
 		},
 		"Unit Economics": {
 			"LTV": ["LTV", "Lifetime Value"],
 			"CAC Payback": ["CAC Payback", "CAC", "Payback"]
 		},
+		"Benchmark Metrics": {
+			"LTV/CAC": ["ltv", "cac", "customer lifetime value"],
+			"Quick Ratio": ["quick ratio"],
+			"Net Dollar Revenue Retention": [
+				"net dollar revenue retention",
+				"net revenue retention",
+				"net retention rate"
+			],
+			"Magic Number": ["magic number"],
+			"Growth Persistence": ["growth persistence"]
+		},
 		"Others": {
+			"Annualized Billings": ["Annualized Billings", "Billings"],
+			"Cash on Balance Sheet": ["total Cash", "Cash on balance sheet"],
+			"Contract renewal rate": ["Contract renewal rate", "CRR"],
+			"expiring sub fees": ["expiring sub fees", "sub fees"],
+			"Debt to Equity": ["Debt to Equity", "Debt to Equity Ratio"],
 			"Employee count": ["EC", "Employee Count", "Number of employee"],
 			"Marketable Securities": ["Marketable Securities", "Securities"],
 			"NDR": ["NDR", "Net Disposable Revenue", "Disposable revenue"],
-			"Debt to Equity": ["Debt to Equity", "Debt to Equity Ratio"],
-			"Cash on Balance Sheet": ["total Cash", "Cash on balance sheet"],
-			"R&D value": ["RnD", "R&D", "Research and Development"],
 			"renewed sub fees": ["renewed sub fees", "sub fees", "rsf"],
-			"expiring sub fees": ["expiring sub fees", "sub fees"],
-			"Annualized Billings": ["Annualized Billings", "Billings"],
-			"Contract renewal rate": ["Contract renewal rate", "CRR"]
+			"R&D value": ["RnD", "R&D", "Research and Development"],
+			"EBITDA": ["ebitda", "EBITDA"]
 		}
 	}
 }

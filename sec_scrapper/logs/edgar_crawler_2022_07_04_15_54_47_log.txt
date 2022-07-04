@@ -1,0 +1,18 @@
+07-04-2022 21:24 - edgar_crawler - INFO - Saving log to /mnt/d/Projects/DigitalAlpha/Metric_Extraction/sec_scrapper/logs
+
+07-04-2022 21:24 - edgar_crawler - INFO - Downloading EDGAR Index files
+07-04-2022 21:24 - edgar_crawler - INFO - Skipping 2021_QTR1.tsv
+07-04-2022 21:24 - edgar_crawler - INFO - Skipping 2021_QTR2.tsv
+07-04-2022 21:24 - edgar_crawler - INFO - Skipping 2021_QTR3.tsv
+07-04-2022 21:24 - edgar_crawler - INFO - Skipping 2021_QTR4.tsv
+07-04-2022 21:24 - edgar_crawler - INFO - Skipping 2022_QTR1.tsv
+07-04-2022 21:24 - edgar_crawler - INFO - Skipping 2022_QTR2.tsv
+07-04-2022 21:24 - edgar_crawler - INFO - 2022_QTR3.tsv downloaded
+07-04-2022 21:24 - edgar_crawler - DEBUG - Could not find CIK for "ADGL"
+07-04-2022 21:24 - edgar_crawler - DEBUG - Could not find CIK for "APVS"
+07-04-2022 21:24 - edgar_crawler - DEBUG - Could not find CIK for "APTY"
+07-04-2022 21:24 - edgar_crawler - INFO - 
+Reading filings metadata...
+
+07-04-2022 21:24 - edgar_crawler - INFO - 
+There are no more filings to download for the given years, quarters and companies

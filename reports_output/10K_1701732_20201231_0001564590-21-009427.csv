@@ -1,0 +1,5 @@
+score,metric,date,value,year,sentence,number
+0.7747613191604614,annualized billings,"the year ended december 31, 2020",$4.5 million,2020,"billings increased by $4.5 million for the year ended december 31, 2020, as compared to the year ended december 31, 2019",4500000.0
+0.6622774600982666,ebitda,"the year ended december 31, 2020",$17.7 million,2020,"adjusted ebitda increased by $17.7 million, or 45%, for the year ended december 31, 2020, as compared to the year ended december 31, 2019",17700000.0
+0.4086123406887054,r&d value,"the year ended december 31, 2020",$8.6 million,2020,"research and development expenses increased by $8.6 million, or 7%, for the year ended december 31, 2020, as compared to the year ended december 31, 2019",8600000.0
+0.3593703508377075,total number of customers,"december 31, 2020","more than 11,000",2020,"as of december 31, 2020, we had more than 11,000 customers worldwide",11000.0
